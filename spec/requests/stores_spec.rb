@@ -18,11 +18,11 @@ RSpec.describe "/stores", type: :request do
   # Store. As you add validations to Store, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { name: "Great restaurant"}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {name: ""}
   }
 
   describe "GET /index" do
