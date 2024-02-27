@@ -18,7 +18,7 @@ RSpec.describe "/stores", type: :request do
   # Store. As you add validations to Store, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { name: "Great restaurant"}
+    { name: Faker::Restaurant.name }
   }
 
   let(:invalid_attributes) {
@@ -89,14 +89,14 @@ RSpec.describe "/stores", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {name: "great"}
       }
 
       it "updates the requested store" do
         store = Store.create! valid_attributes
         patch store_url(store), params: { store: new_attributes }
         store.reload
-        skip("Add assertions for updated state")
+        expect(store.name) .to eq "great"
       end
 
       it "redirects to the store" do
