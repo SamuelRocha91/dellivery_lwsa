@@ -1,4 +1,6 @@
 class StoresController < ApplicationController
+  # se não estiver autenticado vai retornar para a parte de autenticação. Pertence a gem Devise
+  before_action :authenticate_user!
   before_action :set_store, only: %i[ show edit update destroy ]
 
   # GET /stores or /stores.json
