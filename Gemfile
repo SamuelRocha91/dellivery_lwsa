@@ -50,6 +50,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "shoulda-matchers"
   gem "faker"
+  gem 'factory_bot_rails', '~> 6.0'
 end
 
 group :development do
